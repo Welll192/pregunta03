@@ -41,13 +41,13 @@ while True:
 
         # Determinar si la boca está abierta o cerrada
         umbral_apertura = 0.12
-        boca_abierta = mouth_height > umbral_apertura
+        boca_abierta = mouth_height > umbral_apertura # si la altura de la boca es mayor que el umbral entonces se ha hablado una vocal abierta sino se habló una vocal cerrada
 
-        # Incrementar el contador correspondiente
+
         if boca_abierta:
-            vocales_abiertas += 1
+            vocales_abiertas += 1 # se actualiza el contador
         else:
-            vocales_cerradas += 1
+            vocales_cerradas += 1  # se actualiza el contador
 
         # Dibujar los puntos clave en el cuadro
         for landmark in mouth_landmarks:
@@ -66,6 +66,6 @@ while True:
 video.release()
 cv2.destroyAllWindows()
 
-# Imprimir los resultados
+# Imprimir los resultados de las cantidades
 print('Vocales abiertas:', vocales_abiertas)
 print('Vocales cerradas:', vocales_cerradas)
